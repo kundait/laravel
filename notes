@@ -1,0 +1,29 @@
+---Laravel version 5.4---
+---Config-----
+-add the following providers to the app.php config:
+        Collective\Html\HtmlServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+-add the following aliases to the app.php config:
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+ -add the folowing guards to auth.php:
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+-add the following providers to auth.php
+      'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+-add the following password reset config to auth.php
+      'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
