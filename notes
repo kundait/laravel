@@ -1,4 +1,7 @@
 ---Laravel version 5.4---
+---PHP 7.0.20----
+
+
 ---Config-----
 -add the following providers to the app.php config:
         Collective\Html\HtmlServiceProvider::class,
